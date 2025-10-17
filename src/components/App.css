@@ -1,0 +1,120 @@
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("/assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root { height: 100%; margin: 0; }
+body { font-family: "Work Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.app{
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+
+  background:
+    url("../assets/images/background-pattern-desktop.svg") top center / 100% auto no-repeat,
+    hsl(275, 100%, 97%);
+}
+
+@media (max-width: 768px){
+  .app{
+    background:
+      url("../assets/images/background-pattern-mobile.svg") top center / 100% auto no-repeat,
+      hsl(275, 100%, 97%);
+    padding: 16px;
+  }
+}
+
+
+.card{
+  width: min(650px, 90vw);
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 30px 60px rgba(76, 0, 112, 0.15);
+}
+
+
+.card > h1{
+  margin: 0 0 8px;
+  font-size: 32px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.card > h1::before{
+  content: "";
+  width: 32px; height: 32px;
+  background: url("../assets/images/icon-star.svg") center/contain no-repeat;
+  display: inline-block;
+}
+
+
+.item + .item { border-top: 1px solid #eee; }
+
+.question{
+  width: 100%;
+  padding: 18px 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+
+.question .q{
+  font-size: 16px;
+  font-weight: 600;
+  color: hsl(292, 42%, 14%);
+}
+.question:hover .q{
+  color: hsl(281, 83%, 54%);
+}
+
+
+.icon{
+  flex: 0 0 32px;
+  width: 32px; height: 32px;
+  background: #f1e8ff;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  position: relative;
+}
+.icon::before{
+  content: "";
+  inset: 0;
+  position: absolute;
+  margin: auto;
+  width: 16px; height: 16px;
+  background: center / contain no-repeat;
+}
+.icon.plus::before{
+  background-image: url("../assets/images/icon-plus.svg");
+}
+.icon.minus::before{
+  background-image: url("../assets/images/icon-minus.svg");
+}
+
+
+.answer{
+  margin: -2px 0 18px;
+  color: hsl(292, 16%, 49%);
+  line-height: 1.6;
+  font-weight: 500;
+  white-space: pre-line;   
+}
+
+
+.item:last-child { padding-bottom: 4px; }
